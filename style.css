@@ -1,0 +1,313 @@
+/* =========================================
+   GENERAL RESET & BASE STYLES
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f7f4;
+    color: #2c2c2c;
+    line-height: 1.6;
+    text-align: center;
+}
+
+
+/* =========================================
+   SECTION STYLES
+========================================= */
+
+section {
+    position: relative;
+    min-height: 70vh;
+    padding: 90px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+/* Dark overlay for better text visibility */
+section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.48);
+    z-index: 0;
+}
+
+section > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================================
+   HEADINGS
+========================================= */
+
+section h1,
+section h2,
+section h3 {
+    margin-top: 0;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+section p {
+    max-width: 700px;
+    margin: 0 auto 20px;
+    font-size: 1.05rem;
+}
+
+
+/* =========================================
+   HOME SECTION
+========================================= */
+
+#home {
+    min-height: 90vh;
+    background:
+        linear-gradient(rgba(20, 20, 20, 0.45), rgba(20, 20, 20, 0.55)),
+        url("static/images/living-room.jpg")
+        no-repeat center center / cover;
+}
+
+#home h2 {
+    color: #d4af37;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+#home p {
+    color: #ffffff;
+}
+
+
+/* =========================================
+   PRODUCTS SECTION
+========================================= */
+
+#products {
+    background:
+        linear-gradient(rgba(20, 20, 20, 0.45), rgba(20, 20, 20, 0.55)),
+        url("static/images/furniture-showroom.jpg")
+        no-repeat center center / cover;
+}
+
+#products h2 {
+    color: #d4af37;
+}
+
+#products .product-card {
+    background: rgba(255, 255, 255, 0.96);
+    color: #333333;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 15px;
+    max-width: 320px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#products .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.22);
+}
+
+
+/* =========================================
+   CONTACT SECTION
+========================================= */
+
+#contact {
+    background:
+        linear-gradient(rgba(20, 20, 20, 0.55), rgba(20, 20, 20, 0.65)),
+        url("static/images/office-desk.jpg")
+        no-repeat center center / cover;
+}
+
+#contact h2 {
+    color: #d4af37;
+}
+
+
+/* =========================================
+   NAVIGATION BAR
+========================================= */
+
+nav {
+    background-color: rgba(31, 41, 55, 0.97);
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(8px);
+}
+
+nav a {
+    display: inline-block;
+    margin: 0 18px;
+    padding: 8px 5px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+nav a.active {
+    color: #d4af37;
+    border-bottom: 2px solid #d4af37;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+button {
+    background-color: #d4af37;
+    color: #1f2937;
+    border: none;
+    padding: 13px 28px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.18);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #b8952f;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   LINKS
+========================================= */
+
+a {
+    transition: all 0.3s ease;
+}
+
+
+/* =========================================
+   FORM ELEMENTS
+========================================= */
+
+input,
+textarea,
+select {
+    width: 100%;
+    max-width: 500px;
+    padding: 13px 15px;
+    margin: 8px 0;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #333333;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 12px 10px;
+    }
+
+    nav a {
+        margin: 0 8px;
+        font-size: 0.9rem;
+    }
+
+    section {
+        min-height: 65vh;
+        padding: 70px 18px;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    #home h2 {
+        font-size: 2.3rem;
+    }
+
+    section p {
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    nav a {
+        margin: 4px 6px;
+        font-size: 0.82rem;
+    }
+
+    section {
+        padding: 60px 15px;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    #home h2 {
+        font-size: 2rem;
+    }
+
+    button {
+        width: auto;
+        padding: 12px 22px;
+    }
+}
